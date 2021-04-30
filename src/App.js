@@ -7,13 +7,13 @@ const api = {
 function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
-  const search = (evt) => {
+  const search = evt => {
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then((res) => res.json())
-        .then((result) => {
+        .then(res => res.json())
+        .then(result => {
           setWeather(result);
-          setQuery("");
+          setQuery('');
           console.log(result);
         });
     }
@@ -54,11 +54,11 @@ function App() {
   return (
     <div
       className={
-        typeof weather.main != "undefined"
-          ? weather.main.temp > 20
-            ? "app warm"
-            : "app"
-          : "app"
+        (typeof weather.main != "undefined")
+          ? ((weather.main.temp > 18)
+            ? 'app warm'
+            : 'app')
+          : 'app'
       }
     >
       <main>
@@ -67,7 +67,7 @@ function App() {
             type="text"
             className="search-bar"
             placeholder="Search..."
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={e => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
           />
@@ -85,9 +85,7 @@ function App() {
               <div className="weather">{weather.weather[0].main}</div>
             </div>
           </div>
-        ) : (
-          ""
-        )}
+        ) : ('')}
       </main>
     </div>
   );
