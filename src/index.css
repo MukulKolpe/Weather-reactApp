@@ -9,14 +9,14 @@ body {
 }
 
 .app {
-  background-color: aqua;
+  background-color: #4682b4;
   background-size: cover;
   background-position: bottom;
   transition: 0.2s ease-out;
 }
 
 .app.warm {
-  background-color: orange;
+  background-color: #1efc8d;
 }
 main {
   min-height: 100vh;
