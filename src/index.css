@@ -29,8 +29,9 @@ main {
 }
 
 .search-box {
-  width: 60%;
+  width: 70%;
   margin: 0 0 75px;
+  
 }
 .search-box .search-bar {
   display: block;
@@ -99,4 +100,11 @@ main {
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+@media (max-width: 650px){
+  .search-box {
+    width: 90%;
+    
+  }
 }
